@@ -48,7 +48,7 @@ const hr = computed(() =>
 );
 
 watch(hr, () => {
-  const ts = Date.parse(`${date.value}T${time.value}`);
+  const ts = Date.parse(`${date.value}T${time.value}`) / 1000;
   emit('update:modelValue', Number.isNaN(ts) ? undefined : ts);
 });
 
